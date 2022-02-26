@@ -1,7 +1,11 @@
 :root {
     --font: 'Roboto', sans-serif;
-    --background-gradient: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(3,2,51,1) 9%, rgba(5,4,70,1) 34%, rgba(9,9,121,1) 49%, rgba(0,212,255,1) 100%);
+    --background-light: rgba(255, 255, 255, .2);
+    --background-dark: rgba(2,0,36,1);
     --firework-wood: #D4BAA1;
+    --expl-yellow: #f5cf52;
+    --expl-red: red;
+    --expl-blue: blue;
 }
 
 * {
@@ -10,30 +14,82 @@
 }
 
 body {
-    height: 250vh;
+    height: 100vh;
     width: 100vw;
-    background: rgb(2,0,36);
-    background: var(--background-gradient);
     font-family: var(--font);
     position: relative;
+    overflow: hidden;
 }
+
+#darkmode {
+    visibility: hidden;
+    display: none;
+}
+
+#darkmodeLabel {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    z-index: 10;
+}
+
+main {
+    background-image: url("images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    height: 100%;
+    width: 100%;
+}
+
+main:before {
+    background: var(--background-light);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    transition: background 1s ease-in;
+}
+
+h3 {
+    z-index: 100;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 300px auto;
+    display: inline;
+    transition: opacity 1s ease-in;
+    opacity: 1;
+}
+
 
 /*** DETONATOR ***/
-input {
-    visibility: hidden;
+section {
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: opacity 1s ease-in;
 }
 
-label {
+#fire {
+    display: none;
+}
+
+#fireLabel {
     position: absolute;
+    top: auto;
     bottom: 100px;
     left: 100px;
-    border: 2px solid crimson;
+    border: 2px solid gray;
     padding: 5px 15px;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 2px;
+    color: black;
 }
 
-label:after {
+#fireLabel:after {
     content: '';
     color: white;
     position: absolute;
@@ -42,45 +98,158 @@ label:after {
     width: 150px;
 }
 
-input:checked ~ article {
+#fire:checked ~ label:after {
+    animation: seeText .1s forwards;
+    animation-delay: 4s;
+}
+
+/*#fire:checked ~ .explosion li:before {*/
+/*    animation: explosion 2s ease-in-out;*/
+/*    animation-delay: 3s;*/
+/*}*/
+
+form {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+    padding-top: 200px;
+}
+
+#fire:checked ~ .arrow {
     animation: fire 3s linear forwards;
     animation-iteration-count: 1;
 }
 
-input:checked ~ label:after {
-    content: 'Click again to reload!';
-    transition: 1s;
+#fire:checked ~ .explosion li:before {
+    animation: explosionRed 2s ease-in-out;
+    animation-delay: 3s;
+}
+
+#yellow:checked ~ .explosion li:before {
+    animation: explosionYellow 2s ease-in-out;
+    animation-delay: 3s;
+}
+
+#blue:checked ~ .explosion li:before {
+    animation: explosionBlue 2s ease-in-out;
+    animation-delay: 3s;
 }
 
 /*** ROCKET ***/
-article {
+section article {
     position: absolute;
     bottom: 80px;
     left: 0;
     right: 0;
     margin: auto;
-    width: 2px;
-    height: 30px;
+    width: 5px;
+    height: 80px;
     background-color: var(--firework-wood);
+    list-style-type: none;
 }
 
-article:before {
-    position: absolute;
-    top: -5px;
-    left: -6px;
+section article:before {
     content: '';
+    position: absolute;
+    top: -15px;
+    left: -12px;
     width: 0;
     height: 0;
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-bottom: 10px solid darkred;
-    border-radius: 5px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 20px solid darkred;
+}
+
+section article:after {
+    content: '';
+    position: absolute;
+    background-color: var(--firework-wood);
+    top: 5px;
+    left: -20px;
+    height: 70px;
+    width: 35px;
+    clip-path: polygon(50% 11%, 64% 0, 64% 73%, 50% 61%);
+}
+
+
+
+/*** EXPLOSION ***/
+
+section ul li {
+    background-color: transparent;
+    width: 5px;
+    height: 100px;
+    margin: 0 auto;
+    list-style-type: none;
+    position: absolute;
+    left: 0;
+    bottom: 80vh;
+    right: 0;
+    transform-origin: 50% 100%;
+}
+
+section ul li:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 40px;
+    background-color: transparent;
+}
+
+section ul li:nth-child(1) {
+    transform: rotate(0deg) translateY(-15px);
+}
+section ul li:nth-child(2) {
+    transform: rotate(30deg) translateY(-15px);
+}
+section ul li:nth-child(3) {
+    transform: rotate(60deg) translateY(-15px);
+}
+section ul li:nth-child(4) {
+    transform: rotate(90deg) translateY(-15px);
+}
+section ul li:nth-child(5) {
+    transform: rotate(120deg) translateY(-15px);
+}
+section ul li:nth-child(6) {
+    transform: rotate(150deg) translateY(-15px);
+}
+section ul li:nth-child(7) {
+    transform: rotate(180deg) translateY(-15px);
+}
+section ul li:nth-child(8) {
+    transform: rotate(210deg) translateY(-15px);
+}
+section ul li:nth-child(9) {
+    transform: rotate(240deg) translateY(-15px);
+}
+section ul li:nth-child(10) {
+    transform: rotate(270deg) translateY(-15px);
+}
+section ul li:nth-child(11) {
+    transform: rotate(300deg) translateY(-15px);
+}
+section ul li:nth-child(12) {
+    transform: rotate(330deg) translateY(-15px);
+}
+
+@media screen and (max-width: 600px) {
+    body label {
+        left: 30px;
+    }
+
+    #fireLabel {
+        left: 30px;
+    }
 }
 
 /*** ANIMATIONS ***/
 @keyframes fire {
     0% {
-        bottom: 80px
+        bottom: 10vh;
     }
     5% {
         transform: rotate(-10deg);
@@ -92,34 +261,23 @@ article:before {
         transform: rotate(10deg);
     }
     20% {
-        bottom: 200px;
         left: 50px;
     }
     30% {
         right: 0;
         transform: rotate(0deg);
+        bottom: 20vh;
     }
     35% {
         right: 0;
         left: 0;
     }
-    40% {
-        bottom: 300px;
-    }
-    60% {
-        bottom: 400px;
-    }
-    80% {
-        bottom: 500px;
-    }
-    98%{
+    98% {
         opacity: 1;
-        width: 2px;
-        height: 30px;
         display: block;
     }
-    100%{
-        bottom: 600px;
+    100% {
+        bottom: 80vh;
         opacity: 0;
     }
 }
@@ -127,5 +285,50 @@ article:before {
 @keyframes showReload {
     0%{
         display: block;
+    }
+}
+
+@keyframes explosionYellow {
+    0% {
+        top: 100%;
+    }
+    0.001% {
+         background-color: var(--expl-yellow);
+     }
+    33%, 100% {
+        top: -50%;
+    }
+}
+
+@keyframes explosionBlue {
+    0% {
+        top: 100%;
+    }
+    0.001% {
+        background-color: var(--expl-blue);
+    }
+    33%, 100% {
+        top: -50%;
+    }
+}
+
+@keyframes explosionRed {
+    0% {
+        top: 100%;
+    }
+    0.001% {
+        background-color: var(--expl-red);
+    }
+    33%, 100% {
+        top: -50%;
+    }
+}
+
+@keyframes seeText {
+   0% {
+       content: '';
+   }
+    100% {
+        content: 'Click again to reload!'
     }
 }

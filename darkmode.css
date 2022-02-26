@@ -1,0 +1,15 @@
+#darkmode:checked ~ label {
+    color: white;
+}
+
+#darkmode:checked ~ main:before {
+    background: rgba(2, 0, 20, .9);
+}
+
+#darkmode:checked ~ main h3 {
+    opacity: 0;
+}
+
+#darkmode:checked ~ main section {
+    opacity: 1;
+}
