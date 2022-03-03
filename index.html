@@ -4,41 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link href="style.css" rel="stylesheet"/>
-    <link href="darkmode.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;800&display=swap" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet"/>
+    <link href="styles/darkmode.css" rel="stylesheet"/>
     <title>Fireworks!</title>
 </head>
 
 <body>
     <input type="checkbox" id="darkmode">
-    <label for="darkmode" id="darkmodeLabel">Toggle darkmode</label>
+    <input checked="checked" name="color" type="radio" id="blue">
+    <input name="color" type="radio" id="red">
+    <input name="color" type="radio" id="yellow">
+
     <main>
-        <h3>The fireworks are only visible in darkmode</h3>
+        <label for="darkmode">Toggle time</label>
         <section>
-            <label for="blue"><input name="color" type="radio" id="blue">Blue</label>
-            <label for="red"><input name="color" type="radio" id="red">Red</label>
-            <label for="yellow"><input name="color" type="radio" id="yellow">Yellow</label>
-            <label for="mix"><input name="color" type="radio" id="mix">Mixed</label>
+            <article>
+                <div>
+                    <p>Select your fireworks color</p>
+                    <label for="blue">Blue</label>
+                    <label for="red">Red</label>
+                    <label for="yellow">Yellow</label>
+                </div>
+                <label id="fireLabel" for="fire">FIRE</label>
+            </article>
 
-            <input type="checkbox" id="fire">
-            <label id="fireLabel" for="fire">FIRE</label>
-
-            <article class="arrow"></article>
-            <ul class="explosion">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
+            <article>
+                <input type="checkbox" id="fire">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <div class="arrow"></div>
+            </article>
         </section>
     </main>
 </body>

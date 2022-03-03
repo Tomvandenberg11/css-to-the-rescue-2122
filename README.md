@@ -1,6 +1,6 @@
 # CSS to the Rescue
 
-Welkom bij mijn project van [CSS to the Rescue](https://github.com/cmda-minor-web/css-to-the-rescue-2122 "Google's Homepage"). Bij dit van de Minor 'Webdesign and development' is het de bedoeling dat we een interactieve webpagina met alleen CSS. Ik heb ervoor gekozen om hiervoor een vuurwerkshow te maken.
+Welkom bij mijn project van [CSS to the Rescue](https://github.com/cmda-minor-web/css-to-the-rescue-2122 "Google's Homepage"). Bij dit vak van de Minor 'Webdesign and development' is het de bedoeling dat we een interactieve webpagina met alleen CSS. Ik heb ervoor gekozen om hiervoor een vuurwerkshow te maken.
 
 De website is [hier](https://tomvandenberg11.github.io/fireworks/ "Google's Homepage") te zien.
 
@@ -31,15 +31,16 @@ Hierna kan het bestand gewoon geopend worden in de browser door dubbel te klikke
 
 ## To do ✅
 
-| To do                                | Done?  |
-|:-------------------------------------|:------:|
-| Pijl maken                           |   ✅    |
-| Reload knop                          |   ✅    |
-| Dark mode                            |   ✅    |
-| Explosie                             |   ✅    |
-| Position: 'absolute' uit het project |        |
-| Optie verschillende kleuren explosie |        |
-| Optie meerdere vuurpijlen            |        |
+| To do                                                 | Done? |
+|:------------------------------------------------------|:-----:|
+| Pijl maken                                            |   ✅   |
+| Reload knop                                           |   ✅   |
+| Dark mode                                             |   ✅   |
+| Explosie                                              |   ✅   |
+| Onnodige classes, id's en  'absolute' uit het project |   ✅   |
+| Rook toevoegen aan pijl                               |   ⏳   |
+| Optie verschillende kleuren explosie                  |   ✅   |
+| Optie meerdere vuurpijlen                             |       |
 
 ## Rubrics 🅰️
 

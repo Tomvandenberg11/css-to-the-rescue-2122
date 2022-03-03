@@ -1,0 +1,27 @@
+#darkmode:checked ~ main label {
+    color: white;
+}
+
+#darkmode:checked ~ main:before {
+    background: rgba(2, 0, 20, .9);
+}
+
+#darkmode:checked ~ main div label {
+    color: white;
+}
+
+#darkmode:checked ~ main section label:last-of-type {
+    color: black;
+}
+
+#darkmode:checked ~ main div label:last-of-type {
+    color: white;
+}
+
+#darkmode:checked ~ main h3 {
+    opacity: 0;
+}
+
+#darkmode:checked ~ main section {
+    opacity: 1;
+}
