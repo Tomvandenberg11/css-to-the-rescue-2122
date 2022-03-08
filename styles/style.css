@@ -84,7 +84,7 @@ main section article:first-of-type div {
 main section article:first-of-type div p {
     color: var(--darkmode-text);
     margin-bottom: 20px;
-    font-size: 22px;    
+    font-size: 22px;
 }
 
 main section article:first-of-type div label {

@@ -38,8 +38,13 @@ Hierna kan het bestand gewoon geopend worden in de browser door dubbel te klikke
 | Dark mode                                             |   ✅   |
 | Explosie                                              |   ✅   |
 | Onnodige classes, id's en  'absolute' uit het project |   ✅   |
-| Rook toevoegen aan pijl                               |   ⏳   |
+| Rook toevoegen aan pijl                               |       |
+| Explosie gemixte kleuren                              |       |
+| Responsive maken                                      |       |
 | Optie verschillende kleuren explosie                  |   ✅   |
+| Realistische vuurpijl                                 |   ⏳   |
+| Realistische wolken                                   |       |
+| Klap menu voor kleur opties                           |       |
 | Optie meerdere vuurpijlen                             |       |
 
 ## Rubrics 🅰️
