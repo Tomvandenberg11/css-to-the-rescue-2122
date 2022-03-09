@@ -14,6 +14,7 @@ Het procesverslag is te vinden in de [wiki](https://github.com/Tomvandenberg11/f
 - [Installatie](https://github.com/Tomvandenberg11/rijksmuseum-app#installatie)
 - [To do](https://github.com/Tomvandenberg11/rijksmuseum-app#to-do)
 - [Rubrics](https://github.com/Tomvandenberg11/rijksmuseum-app#rubrics)
+- [Procesverslag](https://github.com/Tomvandenberg11/fireworks/wiki "Google's Homepage")
 - [Licence](https://github.com/Tomvandenberg11/rijksmuseum-app#licence)
 - [Credits](https://github.com/Tomvandenberg11/rijksmuseum-app#credits)
 
@@ -52,6 +53,11 @@ Hierna kan het bestand gewoon geopend worden in de browser door dubbel te klikke
 | Klap menu voor kleur opties                           |       |
 | Optie meerdere vuurpijlen                             |       |
 | Realistische vuur animatie aansteker                  |       |
+
+
+## Procesverslag
+Het procesverslag is te vinden in de [wiki](https://github.com/Tomvandenberg11/fireworks/wiki "Google's Homepage").
+
 
 ## Rubrics 🅰️
 

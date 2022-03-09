@@ -344,7 +344,6 @@ main section article:last-of-type ul {
 
 main section article:last-of-type ul:first-of-type:after {
     content: '';
-    color: white;
     position: absolute;
     top: -190px;
     left: 50px;
@@ -594,7 +593,7 @@ section ul:nth-of-type(3) li:nth-child(12) {
 }
 
 @keyframes explosion {
-    0% {
+    0%, 34% {
         top: 100%;
     }
     0.1% {
