@@ -10,13 +10,13 @@ Het procesverslag is te vinden in de [wiki](https://github.com/Tomvandenberg11/f
 
 ## Inhoudsopgave ✍🏼
 
-- [Uitdaging](https://github.com/Tomvandenberg11/rijksmuseum-app#uitdaging)
-- [Installatie](https://github.com/Tomvandenberg11/rijksmuseum-app#installatie)
-- [To do](https://github.com/Tomvandenberg11/rijksmuseum-app#to-do)
-- [Rubrics](https://github.com/Tomvandenberg11/rijksmuseum-app#rubrics)
-- [Procesverslag](https://github.com/Tomvandenberg11/fireworks/wiki "Google's Homepage")
-- [Licence](https://github.com/Tomvandenberg11/rijksmuseum-app#licence)
-- [Credits](https://github.com/Tomvandenberg11/rijksmuseum-app#credits)
+- [Uitdaging](https://github.com/Tomvandenberg11/fireworks#uitdaging-%EF%B8%8F)
+- [Installatie](https://github.com/Tomvandenberg11/fireworks#installatie-%EF%B8%8F)
+- [To do](https://github.com/Tomvandenberg11/fireworks#to-do-)
+- [Procesverslag](https://github.com/Tomvandenberg11/fireworks#procesverslag "Google's Homepage")
+- [Rubrics](https://github.com/Tomvandenberg11/fireworks#rubrics-🅰%EF%B8%8F)
+- [Licence](https://github.com/Tomvandenberg11/fireworks#licence-%EF%B8%8F)
+- [Credits](https://github.com/Tomvandenberg11/fireworks#credits-)
 
 ## Uitdaging 🥵️
 Mijn uitdaging hierbij is dat ik veel verschillende aanpassingen mogelijk wil make voor de gebruiker. De gebruiker kan bijvoorbeeld de kleur en het aantal vuurpijlen aanpassen door middel van checkboxes en radiobuttons. Ik verwacht dat dit een flike klus gaat worden, aangezien er geen JavaScript gebruikt mag worden.
