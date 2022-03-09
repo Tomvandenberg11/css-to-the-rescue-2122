@@ -1,3 +1,5 @@
+/******* ROOT *******/
+
 :root {
     --font: 'Roboto', sans-serif;
     --background-light: rgba(255, 255, 255, .2);
@@ -18,6 +20,10 @@ body {
     position: relative;
     overflow: hidden;
 }
+
+
+
+/******* MAIN + BACKGROUND *******/
 
 main {
     background-image: url("../images/background.jpg");
@@ -54,6 +60,10 @@ main label:first-child {
     display: none;
 }
 
+#blue, #red, #yellow, #mixed {
+    display: none;
+}
+
 main section {
     opacity: 0;
     height: 100%;
@@ -63,7 +73,9 @@ main section {
     display: grid;
 }
 
-/*** CHECKBOXES ***/
+
+
+/******* CHECKBOXES *******/
 main section article:first-of-type {
     align-self: flex-start;
     display: flex;
@@ -97,11 +109,6 @@ main section article:first-of-type div label {
 
 main section article:first-of-type div input[type="radio"] {
     margin-right: 10px;
-}
-
-
-#blue, #red, #yellow, #mixed {
-    display: none;
 }
 
 main section article div label:after {
@@ -175,7 +182,7 @@ main section article div label:after {
 
 
 
-/*** DETONATOR ***/
+/******* DETONATOR *******/
 
 main section article:last-of-type input {
     display: none;
@@ -275,9 +282,9 @@ main section article:last-of-type input:checked ~ label span:nth-of-type(5) {
 }
 
 
-/***
-    ROCKET
-***/
+
+/******* ROCKET *******/
+
 section article:last-of-type div:last-of-type {
     position: absolute;
     bottom: 110vh;
@@ -322,7 +329,9 @@ section article:last-of-type div:last-of-type:after {
 }
 
 
-/*** EXPLOSION ***/
+
+/******* EXPLOSION *******/
+
 main section article:nth-of-type(2){
     height: 100vh;
     width: 20vw;
@@ -386,6 +395,8 @@ main section article:last-of-type input:checked ~  p {
     animation: seeText .1s forwards;
     animation-delay: 5s;
 }
+
+
 
 /******* EXPLOSION 1 *******/
 section ul:first-of-type li:nth-child(1) {
@@ -582,12 +593,6 @@ section ul:nth-of-type(3) li:nth-child(12) {
     }
 }
 
-@keyframes showReload {
-    0%{
-        display: block;
-    }
-}
-
 @keyframes explosion {
     0% {
         top: 100%;
@@ -599,7 +604,6 @@ section ul:nth-of-type(3) li:nth-child(12) {
         top: -50%;
     }
 }
-
 
 @keyframes seeText {
    0% {
