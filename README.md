@@ -4,6 +4,8 @@ Welkom bij mijn project van [CSS to the Rescue](https://github.com/cmda-minor-we
 
 De website is [hier](https://tomvandenberg11.github.io/fireworks/ "Google's Homepage") te zien.
 
+Het procesverslag is te vinden in de [wiki](https://github.com/Tomvandenberg11/fireworks/wiki "Google's Homepage").
+
 ![Screenshot](images/screenshot.png)
 
 ## Inhoudsopgave ✍🏼
