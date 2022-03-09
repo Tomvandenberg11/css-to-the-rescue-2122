@@ -1,5 +1,43 @@
+@media (prefers-color-scheme: light) {
+    main label {
+        color: white;
+    }
+
+    main label:first-child {
+        display: none;
+    }
+
+    main:before {
+        background: rgba(2, 0, 20, .9);
+    }
+
+    main div label {
+        color: white;
+    }
+
+    main section label:last-of-type {
+        color: black;
+    }
+
+    main div label:last-of-type {
+        color: white;
+    }
+
+    main h3 {
+        opacity: 0;
+    }
+
+    main section {
+        opacity: 1;
+    }
+}
+
 #darkmode:checked ~ main label {
     color: white;
+}
+
+#darkmode:checked ~ main label:first-child {
+    display: none;
 }
 
 #darkmode:checked ~ main:before {

@@ -1,5 +1,5 @@
 :root {
-    --font: 'League Spartan', sans-serif;
+    --font: 'Roboto', sans-serif;
     --background-light: rgba(255, 255, 255, .2);
     --background-dark: rgba(2,0,36,1);
     --darkmode-text: white;
@@ -47,7 +47,6 @@ main label:first-child {
     font-size: 24px;
     text-decoration: underline;
     font-weight: 800;
-    letter-spacing: 1px;
 }
 
 #darkmode {
@@ -69,7 +68,7 @@ main section article:first-of-type {
     align-self: flex-start;
     display: flex;
     flex-direction: column;
-    width: 15em;
+    width: 15vw;
     height: 100vh;
     justify-content: space-around;
     align-items: flex-start;
@@ -85,10 +84,15 @@ main section article:first-of-type div p {
     color: var(--darkmode-text);
     margin-bottom: 20px;
     font-size: 22px;
+    width: 300px;
+    text-decoration: underline;
 }
 
 main section article:first-of-type div label {
     color: var(--darkmode-text);
+    margin-bottom: 10px;
+    margin-left: 25px;
+    position: relative;
 }
 
 main section article:first-of-type div input[type="radio"] {
@@ -96,29 +100,53 @@ main section article:first-of-type div input[type="radio"] {
 }
 
 
-#blue, #red, #yellow {
+#blue, #red, #yellow, #mixed {
     display: none;
 }
 
-#blue:checked ~ main section article div label:first-of-type:before {
-    content: "✅";
+main section article div label:after {
+    width: 20px;
+    height: 20px;
+    content: '';
+    background-color: white;
+    left: -27px;
+    top: 0;
     display: inline-block;
     position: absolute;
-    left: 25px
+    z-index: 1;
+    border-radius: 5px;
 }
 
-#yellow:checked ~ main section article div label:last-of-type:before {
-    content: "✅";
+#blue:checked ~ main section article div label:first-of-type:before {
+    content: "✔️";
     display: inline-block;
     position: absolute;
-    left: 25px
+    left: -25px;
+    z-index: 2;
+}
+
+#yellow:checked ~ main section article div label:nth-of-type(3):before {
+    content: "✔️";
+    display: inline-block;
+    position: absolute;
+    left: -25px;
+    z-index: 2;
 }
 
 #red:checked ~ main section article div label:nth-of-type(2):before {
-    content: "✅";
+    content: "✔️";
     display: inline-block;
     position: absolute;
-    left: 25px
+    left: -25px;
+    z-index: 2;
+}
+
+#mixed:checked ~ main section article div label:nth-of-type(4):before {
+    content: "✔️";
+    display: inline-block;
+    position: absolute;
+    left: -25px;
+    z-index: 2;
 }
 
 #blue:checked ~ main section article:last-of-type ul li:before  {
@@ -126,12 +154,26 @@ main section article:first-of-type div input[type="radio"] {
 }
 
 #red:checked ~ main section article:last-of-type ul li:before {
-    --explColor: orangered;
+    --explColor: crimson;
 }
 
 #yellow:checked ~ main section article:last-of-type ul li:before {
     --explColor: goldenrod;
 }
+
+#mixed:checked ~ main section article:last-of-type ul li:nth-of-type(3n):before {
+    --explColor: goldenrod;
+}
+
+#mixed:checked ~ main section article:last-of-type ul li:nth-of-type(3n+1):before {
+    --explColor: crimson;
+}
+
+#mixed:checked ~ main section article:last-of-type ul li:nth-of-type(3n+2):before {
+    --explColor: royalblue;
+}
+
+
 
 /*** DETONATOR ***/
 
@@ -139,14 +181,73 @@ main section article:last-of-type input {
     display: none;
 }
 
-#fireLabel {
-    border: 2px solid gray;
-    padding: 5px 15px;
-    background-color: white;
-    border-radius: 2px;
-    color: black;
-    width: 50px;
-    text-align: center;
+main:nth-child(6) > section:nth-child(2) > article:nth-child(1) > label:nth-child(2) {
+    background: linear-gradient(270deg, #ffdd00 0%, #333 99%);
+    width: 20px;
+    height: 60px;
+    border-radius: 5px;
+    position: relative;
+    display: block;
+    z-index: 2;
+    margin-top: 100px;
+    align-self: flex-end;
+}
+
+main:nth-child(6) > section:nth-child(2) > article:nth-child(1) > label:nth-child(2)  span:first-of-type {
+    position: absolute;
+    top: 0;
+    background: linear-gradient(300deg, #fff 0%, #333 50%);
+    width: 20px;
+    height: 15px;
+    z-index: 0;
+}
+
+main:nth-child(6) > section:nth-child(2) > article:nth-child(1) > label:nth-child(2) span:nth-of-type(2) {
+    width: 30px;
+    height: 15px;
+    display: block;
+    right: 0;
+    background-color: black;
+    clip-path: polygon(0 0, 45% 0, 28% 100%, 0% 100%);
+    z-index: 0;
+}
+
+main:nth-child(6) > section:nth-child(2) > article:nth-child(1) > label:nth-child(2) span:nth-of-type(3) {
+    width: 10px;
+    border-radius: 50%;
+    height: 10px;
+    background-color: transparent;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    z-index: 1;
+}
+
+main:nth-child(6) > section:nth-child(2) > article:nth-child(1) > label:nth-child(2) span:nth-of-type(4) {
+    position: absolute;
+    clip-path: polygon(50% 0%, 61% 35%, 83% 18%, 65% 50%, 98% 48%, 50% 70%, 6% 47%, 35% 51%, 20% 22%, 39% 35%);
+    background-color: #a40606;
+    background-image: linear-gradient(315deg, #a40606 0%, #d98324 74%);
+    width: 20px;
+    height: 30px;
+    top: -20px;
+    right: -7px;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+main:nth-child(6) > section:nth-child(2) > article:nth-child(1) > label:nth-child(2):hover span:nth-of-type(4) {
+    opacity: 1;
+}
+
+main:nth-child(6) > section:nth-child(2) > article:nth-child(1) > label:nth-child(2) span:nth-of-type(5) {
+    position: absolute;
+    width: 200px;
+    bottom: -30px;
+    left: -30px;
+    color: white;
+    display: none;
 }
 
 main section article:last-of-type input:checked ~ div {
@@ -157,6 +258,20 @@ main section article:last-of-type input:checked ~ div {
 main section article:last-of-type input:checked ~ ul li:before {
     animation: explosion 2s ease-in-out;
     animation-delay: 3s;
+}
+
+main section article:last-of-type input:checked ~ ul:nth-of-type(2) li:before {
+    animation: explosion 2s ease-in-out;
+    animation-delay: 4s;
+}
+
+main section article:last-of-type input:checked ~ ul:nth-of-type(3) li:before {
+    animation: explosion 2s ease-in-out;
+    animation-delay: 3.5s;
+}
+
+main section article:last-of-type input:checked ~ label span:nth-of-type(5) {
+    display: inline-block;
 }
 
 
@@ -171,22 +286,40 @@ section article:last-of-type div:last-of-type {
     margin: auto;
     width: 3px;
     height: 50px;
-    background-color: var(--firework-wood);
+    background: rgb(166,175,142);
+    background: linear-gradient(270deg, rgba(166,175,142,1) 0%, rgba(166,175,142,1) 76%, rgba(0,0,0,1) 100%);
     list-style-type: none;
 }
 
 section article:last-of-type div:last-of-type:before {
     content: '';
     position: absolute;
-    top: -10px;
-    left: -8px;
+    top: -40px;
+    left: -16px;
     width: 0;
     height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
     border-bottom: 20px solid darkred;
+    border-radius: 50%;
+    z-index: 1;
 }
 
+section article:last-of-type div:last-of-type:after {
+    content: '';
+    position: absolute;
+    top: -24px;
+    left: -6px;
+    width: 10px;
+    height: 30px;
+    background-color: #e5e5f7;
+    opacity: 0.8;
+    background-image: linear-gradient(135deg, #ff0000 25%, transparent 0%), linear-gradient(225deg, #ff0000 25%, transparent 0%), linear-gradient(45deg, #ff0000 25%, transparent 0%), linear-gradient(315deg, #ff0000 25%, #e5e5f7 25%);
+    background-position:  10px 0, 10px 0, 0 0, 0 0;
+    background-size: 20px 20px;
+    background-repeat: repeat;
+    z-index: 0;
+}
 
 
 /*** EXPLOSION ***/
@@ -200,17 +333,12 @@ main section article:last-of-type ul {
     position: relative;
 }
 
-main section article:last-of-type ul:after {
+main section article:last-of-type ul:first-of-type:after {
     content: '';
     color: white;
     position: absolute;
     top: -190px;
     left: 50px;
-}
-
-main section article:last-of-type input:checked ~ .main section article:last-of-type ul:after {
-    animation: seeText .1s forwards;
-    animation-delay: 4s;
 }
 
 section ul li {
@@ -226,6 +354,14 @@ section ul li {
     transform-origin: 50% 100%;
 }
 
+section ul:nth-of-type(2) li {
+    left: 300px;
+}
+
+section ul:nth-of-type(3) li {
+    left: -300px;
+}
+
 section ul li:before {
     content: '';
     position: absolute;
@@ -236,43 +372,172 @@ section ul li:before {
     background-color: transparent;
 }
 
-section ul li:nth-child(1) {
+section article:last-of-type p {
+    color: white;
+    position: absolute;
+    bottom: 110vh;
+    right: calc(20vw - 10px);
+    width: 200px;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+main section article:last-of-type input:checked ~  p {
+    animation: seeText .1s forwards;
+    animation-delay: 5s;
+}
+
+/******* EXPLOSION 1 *******/
+section ul:first-of-type li:nth-child(1) {
     transform: rotate(0deg) translateY(-15px);
 }
-section ul li:nth-child(2) {
+section ul:first-of-type li:nth-child(2) {
     transform: rotate(30deg) translateY(-15px);
 }
-section ul li:nth-child(3) {
+section ul:first-of-type li:nth-child(3) {
     transform: rotate(60deg) translateY(-15px);
 }
-section ul li:nth-child(4) {
+section ul:first-of-type li:nth-child(4) {
     transform: rotate(90deg) translateY(-15px);
 }
-section ul li:nth-child(5) {
+section ul:first-of-type li:nth-child(5) {
     transform: rotate(120deg) translateY(-15px);
 }
-section ul li:nth-child(6) {
+section ul:first-of-type li:nth-child(6) {
     transform: rotate(150deg) translateY(-15px);
 }
-section ul li:nth-child(7) {
+section ul:first-of-type li:nth-child(7) {
     transform: rotate(180deg) translateY(-15px);
 }
-section ul li:nth-child(8) {
+section ul:first-of-type li:nth-child(8) {
     transform: rotate(210deg) translateY(-15px);
 }
-section ul li:nth-child(9) {
+section ul:first-of-type li:nth-child(9) {
     transform: rotate(240deg) translateY(-15px);
 }
-section ul li:nth-child(10) {
+section ul:first-of-type li:nth-child(10) {
     transform: rotate(270deg) translateY(-15px);
 }
-section ul li:nth-child(11) {
+section ul:first-of-type li:nth-child(11) {
     transform: rotate(300deg) translateY(-15px);
 }
-section ul li:nth-child(12) {
+section ul:first-of-type li:nth-child(12) {
     transform: rotate(330deg) translateY(-15px);
 }
 
+
+/******* EXPLOSION 2 *******/
+section ul:nth-of-type(2) li:nth-child(1) {
+    transform: rotate(0deg) translateY(-15px);
+}
+section ul:nth-of-type(2) li:nth-child(2) {
+    transform: rotate(15deg) translateY(-15px);
+}
+section ul:nth-of-type(2) li:nth-child(3) {
+    transform: rotate(30deg) translateY(-15px);
+}
+section ul:nth-of-type(2) li:nth-child(4) {
+    transform: rotate(45deg) translateY(-15px);
+}
+section ul:nth-of-type(2) li:nth-child(5) {
+    transform: rotate(60deg) translateY(-15px);
+}
+section ul:nth-of-type(2) li:nth-child(6) {
+    transform: rotate(75deg) translateY(-15px);
+}
+section ul:nth-of-type(2) li:nth-child(7) {
+    transform: rotate(90deg) translateY(-15px);
+}
+section ul:nth-of-type(2) li:nth-child(8) {
+    transform: rotate(105deg) translateY(-15px);
+}
+section ul:nth-of-type(2) li:nth-child(9) {
+    transform: rotate(120deg) translateY(-15px);
+}
+section ul:nth-of-type(2) li:nth-child(10) {
+    transform: rotate(135deg) translateY(-15px);
+}
+section ul:nth-of-type(2) li:nth-child(11) {
+    transform: rotate(150deg) translateY(-15px);
+}
+section ul:nth-of-type(2) li:nth-child(12) {
+    transform: rotate(165deg) translateY(-15px);
+}
+section ul:nth-of-type(2) li:nth-child(13) {
+    transform: rotate(180deg) translateY(-15px);
+}
+section ul:nth-of-type(2) li:nth-child(14) {
+    transform: rotate(195deg) translateY(-15px);
+}
+section ul:nth-of-type(2) li:nth-child(15) {
+    transform: rotate(210deg) translateY(-15px);
+}
+section ul:nth-of-type(2) li:nth-child(16) {
+    transform: rotate(225deg) translateY(-15px);
+}
+section ul:nth-of-type(2) li:nth-child(17) {
+    transform: rotate(240deg) translateY(-15px);
+}
+section ul:nth-of-type(2) li:nth-child(18) {
+    transform: rotate(255deg) translateY(-15px);
+}
+section ul:nth-of-type(2) li:nth-child(19) {
+    transform: rotate(270deg) translateY(-15px);
+}
+section ul:nth-of-type(2) li:nth-child(20) {
+    transform: rotate(285deg) translateY(-15px);
+}
+section ul:nth-of-type(2) li:nth-child(21) {
+    transform: rotate(300deg) translateY(-15px);
+}
+section ul:nth-of-type(2) li:nth-child(22) {
+    transform: rotate(315deg) translateY(-15px);
+}
+section ul:nth-of-type(2) li:nth-child(23) {
+    transform: rotate(330deg) translateY(-15px);
+}
+section ul:nth-of-type(2) li:nth-child(24) {
+    transform: rotate(345deg) translateY(-15px);
+}
+
+
+/******* EXPLOSION 3 *******/
+section ul:nth-of-type(3) li:nth-child(1) {
+    transform: rotate(0deg) translateY(-15px);
+}
+section ul:nth-of-type(3) li:nth-child(2) {
+    transform: rotate(30deg) translateY(-15px);
+}
+section ul:nth-of-type(3) li:nth-child(3) {
+    transform: rotate(60deg) translateY(-15px);
+}
+section ul:nth-of-type(3)-type li:nth-child(4) {
+    transform: rotate(90deg) translateY(-15px);
+}
+section ul:nth-of-type(3) li:nth-child(5) {
+    transform: rotate(120deg) translateY(-15px);
+}
+section ul:nth-of-type(3) li:nth-child(6) {
+    transform: rotate(150deg) translateY(-15px);
+}
+section ul:nth-of-type(3) li:nth-child(7) {
+    transform: rotate(180deg) translateY(-15px);
+}
+section ul:nth-of-type(3) li:nth-child(8) {
+    transform: rotate(210deg) translateY(-15px);
+}
+section ul:nth-of-type(3) li:nth-child(9) {
+    transform: rotate(240deg) translateY(-15px);
+}
+section ul:nth-of-type(3) li:nth-child(10) {
+    transform: rotate(270deg) translateY(-15px);
+}
+section ul:nth-of-type(3) li:nth-child(11) {
+    transform: rotate(300deg) translateY(-15px);
+}
+section ul:nth-of-type(3) li:nth-child(12) {
+    transform: rotate(330deg) translateY(-15px);
+}
 
 /*** ANIMATIONS ***/
 @keyframes fire {
@@ -327,7 +592,7 @@ section ul li:nth-child(12) {
     0% {
         top: 100%;
     }
-    0.001% {
+    0.1% {
          background-color: var(--explColor);
      }
     33%, 100% {
@@ -338,9 +603,9 @@ section ul li:nth-child(12) {
 
 @keyframes seeText {
    0% {
-       content: '';
+       opacity: 0;
    }
     100% {
-        content: 'Click again to reload!'
+       opacity: 1;
     }
 }
